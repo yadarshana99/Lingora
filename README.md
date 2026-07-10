@@ -1,1 +1,1 @@
-# Lingora
+. Lingora
