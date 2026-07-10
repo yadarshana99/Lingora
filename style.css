@@ -1,0 +1,213 @@
+h1 {
+    color:black;
+    background-color:gold;
+    height:80px;
+    padding-top:10px;
+}
+h3{color:white;
+background:green;
+}
+p {
+    color:black;
+}
+h1,h2{text-align:center;
+ }
+/* Type the layout and spacing ONCE */
+.btn {
+    display: inline-block;
+    padding:15px 10px;
+    text-decoration: none;
+    border-radius:5px;
+    color: white;
+    font-weight:bold;
+    justify-content:center;
+    margin-bottom:20px;
+}
+  .main-image{
+    display:block;
+    margin:auto;
+    width:400px;
+    max-width:100%;
+    height:auto;
+}
+.contact{
+  text-align:center;
+  background-color:silver;
+  border:5px;
+}
+  .pdfs-btn {
+    display: inline-block;
+    background-color: #4CAF50;
+    color: white;
+    text-decoration: none;
+    padding: 12px 20px;
+    margin: 10px;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.pdfs-btn:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+}
+.important{
+font-weight:bold;
+font-size:18px;}
+ .point1{
+    color:red;
+    }
+   .point2{
+      color:blue;
+    }
+    .point3{
+      color:green;}
+     .point4{
+        color:black;
+      }
+     .point5{
+       color:tomato;
+     }
+    .underline-text{
+    text-decoration:underline !important;
+    }
+ 
+.pdf-box{
+  width:150px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background: white;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+.paper-icon{
+  font-size:50px;
+}
+.pdf-box a{
+  text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    color: blue;
+}
+.pdf-container{
+  display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+.rbtn{display: inline-block;
+    background-color: #4CAF50;
+    color: white;
+    text-decoration: none;
+    padding: 12px 20px;
+    margin: 10px;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+.pdf-box {
+    width: 300px;
+    padding: 15px;
+    margin: 15px auto;
+    border-radius: 10px;
+    text-align: center;
+    background-color: lightblue;
+    border: 2px solid black;
+}
+
+.pdf-box a {
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+    font-weight: bold;
+    display: block;
+}
+.prepo-btn{width: 300px;
+    padding: 15px;
+    margin: 15px auto;
+    border-radius: 10px;
+    text-align: center;
+    background-color:sky blue;
+    border: 2px solid black;} 
+
+  <style>
+  @media screen &(max-width 600px)
+    body{ color:blue;
+    }
+   .container{ flex-direction:colom;
+   }
+   
+  @media screen(max-width:1000px) 
+    body {
+        color:lightgreen;    }
+.btn:active {
+     background-color:blue !important;
+   }
+  </style>
+  
+    <style>
+    nav a {
+    background-color:green;
+    color: white;
+    padding:5px;
+    text-decoration: none;
+    border:5px;
+    margin-right:5px;
+    padding-left:5px;
+    padding-top:5px;
+}
+</style>
+body{
+    margin:0;
+    overflow-x:hidden;
+    background:blue;
+    position:relative;
+}
+
+.blob{
+    position:fixed;
+    border-radius:50%;
+    opacity:0.25;
+    z-index:-1;
+    animation:float 8s ease-in-out infinite;
+}
+
+.blob1{
+    width:250px;
+    height:250px;
+    background:blue;
+    top:50px;
+    left:-80px;
+}
+
+.blob2{
+    width:350px;
+    height:350px;
+    background:purple;
+    top:250px;
+    right:-120px;
+    animation-duration:10s;
+}
+
+.blob3{
+    width:180px;
+    height:180px;
+    background:yellow;
+    bottom:80px;
+    left:40%;
+    animation-duration:12s;
+}
+
+@keyframes float{
+    0%{
+        transform:translateY(0px);
+    }
+    50%{
+        transform:translateY(-20px);
+    }
+    100%{
+        transform:translateY(0px);
+    }
+}

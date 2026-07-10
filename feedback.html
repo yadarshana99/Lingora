@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Lingora - Student Feedback</title>
+ 
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f7f6;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .feedback-card {
+      width: 350px;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+      text-align: center;
+      background-color: #ffffff;
+    }
+
+    h2 {
+      color: #800080; /* Matching your purple header theme */
+      margin-bottom: 20px;
+    }
+
+    .rating-buttons {!important
+      display: flex;
+      justify-content: space-between;
+      margin: 20px 0;
+    }
+
+    .feedback-btn {
+      padding: 12px;
+      font-size: 16px;
+      border: 2px solid #ddd;
+      background: #f9f9f9;
+      border-radius: 8px;
+      cursor: pointer;
+      flex: 1;
+      margin: 0 5px;
+      transition: all 0.2s ease;
+    }
+
+    .feedback-btn:hover {
+      background: #eef;
+    }
+
+    .feedback-btn.selected {
+      background: #007bff;
+      color: white;
+      border-color: #007bff;
+    }
+
+    textarea {
+      width: 100%;
+      height: 80px;
+      margin-top: 15px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      box-sizing: border-box;
+      resize: none;
+    }
+
+    .actions {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 20px;
+    }
+
+    #submit-feedback {
+      padding: 12px 20px;
+      background-color: #28a745; /* Green matching your site buttons */
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .back-btn {
+      padding: 12px 20px;
+      background-color: #6c757d;
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="feedback-card">
+  <h2>Lingora Feedback</h2>
+  <p>How was your learning experience today?</p>
+  
+  <!-- Emoji Rating System -->
+  <div class="rating-buttons">
+    <button class="feedback-btn" data-rating="Good">😊 Good</button>
+    <button class="feedback-btn" data-rating="Okay">😐 Okay</button>
+    <button class="feedback-btn" data-rating="Bad">🙁 Bad</button>
+  </div>
+
+  <!-- Written Comment -->
+  <textarea id="student-comment" placeholder="What can we improve? (Optional)"></textarea>
+
+  <!-- Navigation & Submission Links -->
+  <div class="actions">
+    <a href="index.html" class="back-btn">Go Back</a> <!-- Make sure index.html matches your homepage file name -->
+    <button id="submit-feedback">Submit</button>
+  </div>
+</div>
+
+<script>
+  let selectedRating = "";
+
+  // Handle Emoji Selection
+  const buttons = document.querySelectorAll('.feedback-btn');
+  buttons.forEach(button => {
+    button.addEventListener('click', () => {
+      buttons.forEach(btn => btn.classList.remove('selected'));
+      button.classList.add('selected');
+      selectedRating = button.getAttribute('data-rating');
+    });
+  });
+
+  // Handle Form Submission
+  document.getElementById('submit-feedback').addEventListener('click', () => {
+    const comment = document.getElementById('student-comment').value;
+
+    if (!selectedRating) {
+      alert("Please select an emoji rating first!");
+      return;
+    }
+
+    // Capture the data payload
+    const feedbackData = {
+      rating: selectedRating,
+      comment: comment,
+      date: new Date().toLocaleDateString()
+    };
+
+    console.log("Saved Data:", feedbackData);
+    alert("Thank you for making Lingora better!");
+
+    // Clear inputs after submission
+    buttons.forEach(btn => btn.classList.remove('selected'));
+    document.getElementById('student-comment').value = "";
+    selectedRating = "";
+  });
+</script>
+</body>
+</html>
